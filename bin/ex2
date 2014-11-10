@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require "graphos"
+original = ARGV[0]
+mst_file = original.gsub(".txt",".mst.txt").sub("grafos/","outputs/ex2/")
+
+def get_memory_usage
+  `ps -o rss= -p #{Process.pid}`.to_i
+end
+
+before_memory = get_memory_usage
+before_time = Time.now
+
+graph = Graphos::Weighted::TextFactory.read(ARGV[0])
+mst = Graphos::Algorithm.prim graph, 0
+
+edge_sum = 0.0
+
+File.open(mst_file, "w") do |f|
+  f.write(mst.size)
+  mst.nodes.each do |node|
+    node.edges.each do |edge|
+      if edge.to.index > node.index
+        edge_sum += edge.weight
+        f.write("\n#{node.index} #{edge.to.index} #{edge.weight}")
+      end
+    end
+  end
+end
+
+after_memory = get_memory_usage
+after_time = Time.now
+
+puts "Total Weight: #{edge_sum}"
+puts "Memory Usage: #{after_memory}"
+puts "Time: #{after_time-before_time}"

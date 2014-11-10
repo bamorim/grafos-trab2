@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+require "graphos"
+
+require "pry"
+dijkstra = 2721
+turing = 11364
+kruskal = 471364
+kleinberg = 5708
+tardos = 11385
+ratton = 343929
+marroquim = 309496
+names = []
+File.open(ARGV[1],"r") do |f|
+  while line = f.gets
+    i,n = *(line.strip).split(",")
+    i = i.to_i
+    names[i-1] = n
+  end
+end
+
+graph = Graphos::Weighted::TextFactory.read(ARGV[0])
+paths = Graphos::Algorithm.dijkstra graph, dijkstra
+
+def route b
+  puts "#{names[dijkstra]} ---> #{names[b]}"
+  paths[b].each do |e|
+    puts "#{names[e.to.index]}"
+  end
+  puts "-------------\n"
+end
+
+route turing
+route kruskal
+route kleinberg
+route tardos
+route ratton
+route marroquim

@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require "graphos"
+
+graph = Graphos::Weighted::TextFactory.read(ARGV[0])
+paths = Graphos::Algorithm.dijkstra graph, 0
+(1..5).each do |i|
+  puts "#{i*10}: #{paths[i*10-1].cost}"
+  puts "#{i*10}: #{paths[i*10-1].path.map{|x| x.to.index+1}}"
+  puts "----"
+end

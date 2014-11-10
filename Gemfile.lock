@@ -1,0 +1,11 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    graphos (0.3.3)
+
+PLATFORMS
+  java
+  ruby
+
+DEPENDENCIES
+  graphos
