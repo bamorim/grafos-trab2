@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    graphos (0.3.3)
+    graphos (0.3.5)
 
 PLATFORMS
   java

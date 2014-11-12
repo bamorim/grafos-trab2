@@ -1,0 +1,8 @@
+LOADING GRAPH
+Time: 1.189765291
+Running Prim's Algorithm
+Time: 2.067728399
+Writing mst file and calculating edge sum
+Total Weight: 31947.0
+Memory Usage: 39232
+Time: 2.09930931
