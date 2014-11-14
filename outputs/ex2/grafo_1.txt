@@ -1,1 +1,8 @@
-4.0K	outputs/ex2/grafo_1.mst.txt
+LOADING GRAPH
+Time: 0.008154
+Running Prim's Algorithm
+Time: 0.011391479
+Writing mst file and calculating edge sum
+Total Weight: 336.0
+Memory Usage: 10064
+Time: 0.015980188
