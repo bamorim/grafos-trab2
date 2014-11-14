@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "graphos"
+require "celluloid"
+
+class DijkstraRunner
+  include Celluloid
+end

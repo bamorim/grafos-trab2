@@ -1,0 +1,1 @@
+4.0K	outputs/ex2/grafo_1.mst.txt

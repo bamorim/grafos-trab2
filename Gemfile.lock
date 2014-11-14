@@ -1,11 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    graphos (0.3.5)
+    eventmachine (1.0.3)
+    eventmachine (1.0.3-java)
+    graphos (0.3.7)
 
 PLATFORMS
   java
   ruby
 
 DEPENDENCIES
+  eventmachine
   graphos
